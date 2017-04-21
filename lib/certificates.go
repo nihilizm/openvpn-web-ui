@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/adamwalach/openvpn-web-ui/models"
+	"github.com/nihilizm/openvpn-web-ui/models"
 	"github.com/astaxie/beego"
 )
 
@@ -94,7 +94,7 @@ func trim(s string) string {
 }
 
 func CreateCertificate(name string) error {
-	rsaPath := "/usr/share/easy-rsa/"
+	rsaPath := models.GlobalCfg.OVConfigPath + "easy-rsa/"
 	varsPath := models.GlobalCfg.OVConfigPath + "keys/vars"
 	cmd := exec.Command("/bin/bash", "-c",
 		fmt.Sprintf(

@@ -1,11 +1,11 @@
 package controllers
 
 import (
-	"github.com/adamwalach/openvpn-web-ui/lib"
-	"github.com/adamwalach/openvpn-web-ui/models"
+	"github.com/nihilizm/openvpn-web-ui/lib"
+	"github.com/nihilizm/openvpn-web-ui/models"
 	"github.com/astaxie/beego"
 
-	mi "github.com/adamwalach/go-openvpn/server/mi"
+	mi "github.com/nihilizm/go-openvpn/server/mi"
 )
 
 type MainController struct {

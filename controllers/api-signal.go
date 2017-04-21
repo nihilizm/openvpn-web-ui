@@ -3,8 +3,8 @@ package controllers
 import (
 	"encoding/json"
 
-	mi "github.com/adamwalach/go-openvpn/server/mi"
-	"github.com/adamwalach/openvpn-web-ui/models"
+	mi "github.com/nihilizm/go-openvpn/server/mi"
+	"github.com/nihilizm/openvpn-web-ui/models"
 )
 
 //APISignalController sends signals to OpenVPN daemon
@@ -33,7 +33,8 @@ func (c *APISignalController) Send() {
 	}
 	if err := client.Signal(p.Sname); err != nil {
 		c.ServeJSONError(err.Error())
-	} else {
-		c.ServeJSONMessage("Signal sent")
+		return
 	}
+
+	c.ServeJSONMessage("Signal sent")
 }
